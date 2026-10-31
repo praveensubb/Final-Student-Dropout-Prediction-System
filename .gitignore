@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# React / Node
+node_modules/
+dist/
+build/
+coverage/
+
+# VS Code and IDE
+.vscode/
+.idea/
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db

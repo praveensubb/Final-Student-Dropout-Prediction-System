@@ -1,0 +1,320 @@
+/* =========================================================
+   ANONYMOUS PEER NUDGE PAGE
+   ========================================================= */
+
+.peer-nudge-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+  color: #102a43;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #12345b;
+}
+
+.page-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #61758a;
+}
+
+/* =========================================================
+   PEER COUNT
+   ========================================================= */
+
+.peer-count-card {
+  min-width: 125px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  color: #2563eb;
+}
+
+.peer-count-card strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.peer-count-card span {
+  font-size: 11px;
+  color: #61758a;
+}
+
+/* =========================================================
+   PRIVACY BOX
+   ========================================================= */
+
+.privacy-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 18px 22px;
+  margin-bottom: 22px;
+
+  background: #eaf3ff;
+  border-radius: 14px;
+
+  color: #2563eb;
+}
+
+.privacy-box h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: #12345b;
+}
+
+.privacy-box p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #61758a;
+}
+
+/* =========================================================
+   COMPARISON GRID
+   ========================================================= */
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   METRIC CARD
+   ========================================================= */
+
+.metric-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.08);
+
+  min-width: 0;
+}
+
+.metric-card > svg {
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.metric-card h3 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: #12345b;
+}
+
+/* =========================================================
+   COMPARISON INSIDE CARD
+   ========================================================= */
+
+.comparison-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.comparison-item {
+  background: #f5f7fb;
+  border-radius: 10px;
+  padding: 14px 12px;
+
+  min-width: 0;
+}
+
+.comparison-item span {
+  display: block;
+  margin-bottom: 9px;
+
+  font-size: 10px;
+  color: #61758a;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comparison-item strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #102a43;
+}
+
+/* =========================================================
+   NUDGE SECTION
+   ========================================================= */
+
+.nudge-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.08);
+  margin-bottom: 22px;
+}
+
+.nudge-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+
+  color: #2563eb;
+}
+
+.nudge-title h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #12345b;
+}
+
+.nudge-title p {
+  margin: 0;
+  font-size: 13px;
+  color: #61758a;
+}
+
+.nudge-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 16px 18px;
+
+  background: #f5f7fb;
+  border-radius: 11px;
+
+  color: #f59e0b;
+}
+
+.nudge-message p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #425466;
+}
+
+.nudge-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   KEEP IMPROVING
+   ========================================================= */
+
+.improve-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.08);
+}
+
+.improve-section h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  color: #12345b;
+}
+
+.improve-section p {
+  margin: 0 0 20px;
+
+  max-width: 900px;
+
+  font-size: 13px;
+  line-height: 1.7;
+  color: #61758a;
+}
+
+.improve-section button {
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 16px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.improve-section button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .peer-nudge-page {
+    padding: 18px;
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .peer-count-card {
+    align-self: stretch;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .comparison-card {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+}

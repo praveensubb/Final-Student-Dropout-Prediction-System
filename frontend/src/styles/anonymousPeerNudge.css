@@ -1,0 +1,377 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.peer-nudge-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f4f7fb;
+  color: #102a43;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #12345b;
+}
+
+.page-header p {
+  margin: 8px 0 0;
+  color: #607d9a;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   PEER COUNT
+========================================================= */
+
+.peer-count-card {
+  width: 120px;
+  min-height: 95px;
+  padding: 16px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  color: #2864e8;
+}
+
+.peer-count-card strong {
+  font-size: 24px;
+  color: #2864e8;
+}
+
+.peer-count-card span {
+  font-size: 11px;
+  color: #607d9a;
+}
+
+
+/* =========================================================
+   PRIVACY
+========================================================= */
+
+.privacy-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 18px 22px;
+  margin-bottom: 22px;
+
+  background: #eaf3ff;
+  border-radius: 12px;
+
+  color: #2463d8;
+}
+
+.privacy-box h3 {
+  margin: 0 0 6px;
+  color: #173d68;
+  font-size: 15px;
+}
+
+.privacy-box p {
+  margin: 0;
+  color: #607d9a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   COMPARISON GRID
+========================================================= */
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   METRIC CARD
+========================================================= */
+
+.metric-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+}
+
+.metric-card > svg {
+  color: #2864e8;
+  margin-bottom: 12px;
+}
+
+.metric-card h3 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: #102a43;
+}
+
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+
+.comparison-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.comparison-item {
+  min-height: 64px;
+  padding: 12px;
+
+  border-radius: 10px;
+  background: #f5f8fc;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comparison-item span {
+  font-size: 10px;
+  color: #607d9a;
+}
+
+.comparison-item strong {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #102a43;
+}
+
+
+/* =========================================================
+   NUDGE SECTION
+========================================================= */
+
+.nudge-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+
+  margin-bottom: 22px;
+
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+}
+
+.nudge-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.nudge-title svg {
+  color: #f2a900;
+  flex-shrink: 0;
+}
+
+.nudge-title h2 {
+  margin: 0;
+  font-size: 19px;
+  color: #102a43;
+}
+
+.nudge-title p {
+  margin: 7px 0 0;
+  font-size: 13px;
+  color: #607d9a;
+}
+
+
+/* =========================================================
+   NUDGE MESSAGE
+========================================================= */
+
+.nudge-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-top: 18px;
+  padding: 16px;
+
+  background: #f5f8fc;
+  border-radius: 10px;
+}
+
+.nudge-message > svg {
+  color: #f2a900;
+  flex-shrink: 0;
+}
+
+.nudge-message p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #40566f;
+}
+
+.nudge-message p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   KEEP IMPROVING
+========================================================= */
+
+.improve-section {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+}
+
+.improve-section h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #102a43;
+}
+
+.improve-section p {
+  margin: 0 0 18px;
+  color: #607d9a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.improve-section button {
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 18px;
+
+  background: #2864e8;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.improve-section button:hover {
+  background: #1d55cc;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+}
+
+.loading-card h2 {
+  margin: 0 0 8px;
+  color: #102a43;
+}
+
+.loading-card p {
+  color: #607d9a;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+
+  box-shadow: 0 4px 16px rgba(30, 60, 90, 0.08);
+}
+
+.error-card svg {
+  color: #dc3545;
+}
+
+.error-card h2 {
+  color: #102a43;
+  margin: 12px 0 8px;
+}
+
+.error-card p {
+  color: #607d9a;
+  margin-bottom: 18px;
+}
+
+.error-card button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  background: #2864e8;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .peer-nudge-page {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .peer-count-card {
+    width: 100%;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}

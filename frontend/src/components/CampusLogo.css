@@ -1,0 +1,439 @@
+/* =====================================================
+   CAMPUSSPHERE LOGO
+   ===================================================== */
+
+.campus-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+}
+
+
+/* =====================================================
+   LOGO SYMBOL
+   ===================================================== */
+
+.campus-logo-symbol {
+    position: relative;
+
+    width: 68px;
+    height: 62px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   GRADUATION CAP
+   ===================================================== */
+
+.campus-cap {
+    position: absolute;
+
+    top: 0;
+    left: 17px;
+
+    width: 35px;
+    height: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #073b9c,
+        #1675e8
+    );
+
+    transform: skew(-18deg);
+
+    border-radius: 2px;
+
+    z-index: 5;
+}
+
+
+.campus-cap::after {
+    content: "";
+
+    position: absolute;
+
+    right: -5px;
+    top: 5px;
+
+    width: 6px;
+    height: 16px;
+
+    background: #f59e0b;
+
+    border-radius: 2px;
+}
+
+
+.campus-cap span {
+    position: absolute;
+
+    right: -7px;
+    bottom: -3px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #f59e0b;
+}
+
+
+/* =====================================================
+   CAMPUS BUILDING
+   ===================================================== */
+
+.campus-building {
+    position: absolute;
+
+    left: 14px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    background: white;
+
+    border-radius: 50%;
+
+    border: 3px solid #1675e8;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+
+.building-roof {
+    width: 0;
+    height: 0;
+
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 9px solid #153b82;
+
+    margin-bottom: 1px;
+}
+
+
+.building-body {
+    width: 22px;
+    height: 20px;
+
+    background: #dbeafe;
+
+    border-top: 2px solid #153b82;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    padding-top: 5px;
+}
+
+
+.building-body span {
+    width: 3px;
+    height: 7px;
+
+    background: #2563eb;
+
+    border-radius: 1px;
+}
+
+
+/* =====================================================
+   PEOPLE
+   ===================================================== */
+
+.campus-person {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 11px;
+
+    border: 2px solid white;
+
+    z-index: 6;
+
+    box-shadow:
+        0 3px 8px rgba(15, 23, 42, 0.15);
+}
+
+
+.campus-person-blue {
+    left: 0;
+    top: 29px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1683ff,
+            #2563eb
+        );
+}
+
+
+.campus-person-green {
+    right: 0;
+    top: 29px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #059669
+        );
+}
+
+
+/* =====================================================
+   LOGO TEXT
+   ===================================================== */
+
+.campus-logo-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.campus-logo-name {
+    color: #10245c;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+}
+
+
+.campus-logo-name span {
+    color: #08a5b5;
+}
+
+
+.campus-logo-tagline {
+    margin-top: 7px;
+
+    color: #263b70;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =====================================================
+   COMPACT VERSION
+   ===================================================== */
+
+.campus-logo-compact .campus-logo-symbol {
+    transform: scale(0.82);
+
+    transform-origin: left center;
+
+    margin-right: -10px;
+}
+
+
+.campus-logo-compact .campus-logo-name {
+    font-size: 24px;
+}
+
+
+.campus-logo-compact .campus-logo-tagline {
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .campus-logo-symbol {
+        width: 52px;
+        height: 50px;
+    }
+
+    .campus-cap {
+        left: 13px;
+
+        width: 28px;
+        height: 11px;
+    }
+
+    .campus-building {
+        left: 11px;
+        top: 13px;
+
+        width: 32px;
+        height: 32px;
+    }
+
+    .campus-person {
+        width: 20px;
+        height: 20px;
+
+        font-size: 9px;
+    }
+
+    .campus-person-blue {
+        top: 25px;
+    }
+
+    .campus-person-green {
+        top: 25px;
+    }
+
+    .campus-logo-name {
+        font-size: 23px;
+    }
+
+    .campus-logo-tagline {
+        font-size: 8px;
+    }
+}
+/* =========================================================
+   CAMPUS LOGO - CINEMATIC INTRO VERSION
+   ========================================================= */
+
+.campus-logo-compact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transform-origin: center center;
+}
+
+
+/* Logo symbol */
+
+.campus-logo-compact .campus-logo-symbol {
+    transform: scale(0.9);
+
+    filter:
+        drop-shadow(0 0 12px rgba(0, 150, 255, 0.45));
+}
+
+
+/* Logo text */
+
+.campus-logo-compact .campus-logo-text {
+    text-align: center;
+}
+
+
+/* CampusSphere name */
+
+.campus-logo-compact .campus-logo-name {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+
+/* Sphere gradient */
+
+.campus-logo-compact .campus-logo-name span {
+    background:
+        linear-gradient(
+            90deg,
+            #1688ff,
+            #00bcd4,
+            #10d9a0
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Tagline */
+
+.campus-logo-compact .campus-logo-tagline {
+    margin-top: 5px;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .campus-logo-compact .campus-logo-symbol {
+        transform: scale(0.75);
+    }
+
+    .campus-logo-compact .campus-logo-name {
+        font-size: 25px;
+    }
+
+    .campus-logo-compact .campus-logo-tagline {
+        font-size: 8px;
+    }
+}

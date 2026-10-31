@@ -1,0 +1,600 @@
+/* =====================================================
+   CAMPUSSPHERE
+   STUDENT REGISTRATION
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+   ===================================================== */
+
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(37, 99, 235, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(6, 182, 212, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f3f8ff,
+            #f8fbff
+        );
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   REGISTRATION CARD
+   ===================================================== */
+
+.registration-card {
+    width: 100%;
+    max-width: 1050px;
+
+    background: white;
+
+    border: 1px solid #dce7f2;
+
+    border-radius: 28px;
+
+    padding: 35px 45px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(15, 23, 42, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Top blue line */
+
+.registration-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #1683ff,
+            #06b6d4
+        );
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.login-brand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: #102252;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.login-brand-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(37, 99, 235, 0.20);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.login-heading {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.login-heading h1 {
+    margin: 0 0 8px;
+
+    color: #0d1b42;
+
+    font-size: 32px;
+
+    font-weight: 850;
+
+    letter-spacing: -1px;
+}
+
+.login-heading p {
+    margin: 0;
+
+    color: #71829a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   SUCCESS MESSAGE
+   ===================================================== */
+
+.login-success {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+
+    color: #047857;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+   ===================================================== */
+
+.login-error {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+
+    color: #dc2626;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.registration-form {
+    width: 100%;
+}
+
+
+/* =====================================================
+   TWO COLUMN ROW
+   ===================================================== */
+
+.registration-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+   ===================================================== */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: #263958;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 46px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid #d5e1ed;
+
+    border-radius: 9px;
+
+    background: #f8fbff;
+
+    color: #172b4d;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #9aaabd;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    background: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   PARENT SECTION
+   ===================================================== */
+
+.registration-card h3 {
+    margin: 20px 0 12px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #17315e;
+
+    background:
+        #eff6ff;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   CREATE ACCOUNT BUTTON
+   ===================================================== */
+
+.registration-form .login-button {
+    width: 100%;
+
+    height: 51px;
+
+    margin-top: 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1683ff,
+            #2563eb
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 22px
+        rgba(37, 99, 235, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.registration-form .login-button:hover:not(:disabled) {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(37, 99, 235, 0.28);
+}
+
+
+.registration-form .login-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   LOGIN LINK
+   ===================================================== */
+
+.registration-login-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 17px;
+
+    color: #71829a;
+
+    font-size: 12px;
+}
+
+
+.registration-login-link button {
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    color: #2563eb;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.registration-login-link button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.login-footer {
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #9aa9bb;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   FORM VISUAL SECTIONS
+   ===================================================== */
+
+.registration-row:nth-of-type(1),
+.registration-row:nth-of-type(2) {
+    position: relative;
+}
+
+
+/* =====================================================
+   INPUT HOVER
+   ===================================================== */
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #b8cce2;
+}
+
+
+/* =====================================================
+   NUMBER INPUT
+   ===================================================== */
+
+.form-group input[type="number"] {
+    appearance: textfield;
+}
+
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 750px) {
+
+    .login-page {
+        padding: 25px 15px;
+        align-items: flex-start;
+    }
+
+    .registration-card {
+        padding: 30px 22px;
+
+        border-radius: 20px;
+    }
+
+    .registration-row {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-bottom: 15px;
+    }
+
+    .login-heading h1 {
+        font-size: 27px;
+    }
+
+    .login-heading p {
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 450px) {
+
+    .login-page {
+        padding: 15px 10px;
+    }
+
+    .registration-card {
+        padding: 25px 16px;
+    }
+
+    .login-brand {
+        font-size: 16px;
+    }
+
+    .login-heading h1 {
+        font-size: 24px;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 44px;
+
+        font-size: 12px;
+    }
+
+    .registration-form .login-button {
+        height: 48px;
+    }
+}

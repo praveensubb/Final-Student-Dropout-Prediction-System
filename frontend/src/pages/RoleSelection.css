@@ -1,0 +1,1783 @@
+/* =========================================================
+   CAMPUSSPHERE ROLE SELECTION
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.role-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #eef8ff;
+}
+
+
+/* =========================================================
+   ROLE SELECTION IMAGE
+   ========================================================= */
+
+.campus-frame {
+    position: relative;
+
+    width: min(96vw, 1536px);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    isolation: isolate;
+
+    animation:
+        rolePageReveal
+        1.2s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        both;
+}
+
+
+.role-background {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    position: relative;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   CLICK LAYER
+   ========================================================= */
+
+.click-layer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CLICKABLE BUTTON
+   ========================================================= */
+
+.click-area {
+    position: absolute;
+
+    display: block;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    z-index: 10000;
+
+    outline: none;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 18px;
+
+    /*
+       Almost invisible.
+       The original image remains visible.
+    */
+    background: rgba(255, 255, 255, 0.001);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   STUDENT LOGIN BUTTON
+   ========================================================= */
+
+.student-area {
+    left: 1.5%;
+
+    top: 80%;
+
+    width: 25.2%;
+
+    height: 9%;
+}
+
+
+/* =========================================================
+   STUDENT REGISTER BUTTON
+   ========================================================= */
+
+.register-area {
+    left: 7.5%;
+
+    top: 91%;
+
+    width: 11%;
+
+    height: 5%;
+}
+
+
+/* =========================================================
+   FACULTY LOGIN BUTTON
+   ========================================================= */
+
+.faculty-area {
+    left: 31.8%;
+
+    top: 80%;
+
+    width: 25.2%;
+
+    height: 9%;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN BUTTON
+   ========================================================= */
+
+.admin-area {
+    left: 62.2%;
+
+    top: 80%;
+
+    width: 25.2%;
+
+    height: 9%;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+   ========================================================= */
+
+.student-area:hover,
+.faculty-area:hover,
+.admin-area:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, 0.25);
+
+    transform: scale(1.015);
+}
+
+
+.register-area:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.click-area:focus-visible {
+    outline:
+        3px solid rgba(0, 140, 255, 0.8);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CINEMATIC INTRO
+   ========================================================= */
+
+.cinematic-intro {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    min-height: 100vh;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #000000;
+
+    color: #ffffff;
+
+    animation:
+        introAppear
+        1.5s
+        ease-out
+        both;
+}
+
+
+/* =========================================================
+   INTRO BLACK BACKGROUND
+   ========================================================= */
+
+.cinematic-black {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #0c2945 0%,
+            #061522 28%,
+            #02070c 58%,
+            #000000 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   DARK VIGNETTE
+   ========================================================= */
+
+.cinematic-intro::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+}
+
+
+/* =========================================================
+   BLUE SPOTLIGHT
+   ========================================================= */
+
+.cinematic-spotlight {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 600px;
+    height: 600px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(0, 145, 255, 0.14) 25%,
+            rgba(0, 110, 255, 0.07) 48%,
+            transparent 72%
+        );
+
+    filter: blur(15px);
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    animation:
+        spotlightPulse
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes spotlightPulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+
+        opacity: 0.65;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+   ========================================================= */
+
+.intro-text {
+    position: relative;
+
+    z-index: 20;
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    animation:
+        introTextReveal
+        1.8s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        both;
+}
+
+
+/* =========================================================
+   ACTUAL CAMPUS LOGO
+   ========================================================= */
+
+.cinematic-logo {
+    display: block;
+
+    width: 155px;
+
+    height: auto;
+
+    max-height: 155px;
+
+    object-fit: contain;
+
+    margin:
+        0 auto 18px;
+
+    opacity: 0;
+
+    transform:
+        translateY(-35px)
+        scale(0.75);
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(0, 150, 255, 0.5)
+        );
+
+    animation:
+        cinematicLogoReveal
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        0.15s
+        forwards;
+}
+
+
+@keyframes cinematicLogoReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-35px)
+            scale(0.75);
+
+        filter:
+            blur(8px)
+            drop-shadow(0 0 0 transparent);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            translateY(4px)
+            scale(1.05);
+
+        filter:
+            blur(0)
+            drop-shadow(
+                0 0 28px
+                rgba(0, 160, 255, 0.65)
+            );
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0)
+            drop-shadow(
+                0 0 15px
+                rgba(0, 150, 255, 0.4)
+            );
+    }
+}
+
+
+/* =========================================================
+   WELCOME TEXT
+   ========================================================= */
+
+.welcome-text {
+    display: block;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 9px;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        welcomeReveal
+        1s
+        ease-out
+        0.3s
+        forwards;
+}
+
+
+/* =========================================================
+   INTRO LINE
+   ========================================================= */
+
+.intro-line {
+    width: 0;
+
+    height: 2px;
+
+    margin:
+        18px auto 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #1688ff,
+            #ffffff,
+            #10d9a0,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 160, 255, 0.8);
+
+    animation:
+        lineExpand
+        1.2s
+        ease-out
+        0.2s
+        forwards;
+}
+
+
+@keyframes lineExpand {
+
+    from {
+        width: 0;
+
+        opacity: 0;
+    }
+
+    to {
+        width: 180px;
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CAMPUSSPHERE TITLE
+   ========================================================= */
+
+.intro-text h1 {
+    display: block;
+
+    margin:
+        14px 0 12px;
+
+    padding: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(48px, 7vw, 100px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    text-shadow:
+        0 0 10px
+        rgba(255, 255, 255, 0.15),
+
+        0 0 30px
+        rgba(0, 145, 255, 0.18);
+
+    opacity: 0;
+
+    animation:
+        titleReveal
+        1.3s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        0.5s
+        forwards;
+}
+
+
+.intro-text h1 span {
+    display: inline;
+
+    color: #00bcd4;
+
+    font-size: inherit;
+
+    font-weight: inherit;
+
+    letter-spacing: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1688ff 0%,
+            #00bcd4 45%,
+            #10d9a0 100%
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.intro-text p {
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(12px, 1.4vw, 18px);
+
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    line-height: 1.6;
+
+    opacity: 0;
+
+    animation:
+        subtitleReveal
+        1s
+        ease-out
+        1s
+        forwards;
+}
+
+
+/* =========================================================
+   TAP TO ENTER
+   ========================================================= */
+
+.tap-to-enter {
+    position: relative;
+
+    z-index: 30;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin:
+        55px auto 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    animation:
+        tapPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   TAP ICON
+   ========================================================= */
+
+.tap-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 150, 255, 0.2);
+}
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+.intro-particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px #1688ff,
+        0 0 25px
+        rgba(0, 160, 255, 0.7);
+
+    opacity: 0.3;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation:
+        particleFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.particle-1 {
+    left: 18%;
+    top: 30%;
+}
+
+
+.particle-2 {
+    left: 27%;
+    top: 70%;
+
+    animation-delay: 1s;
+}
+
+
+.particle-3 {
+    right: 20%;
+    top: 25%;
+
+    animation-delay: 1.5s;
+}
+
+
+.particle-4 {
+    right: 28%;
+    bottom: 25%;
+
+    animation-delay: 0.6s;
+}
+
+
+.particle-5 {
+    left: 50%;
+    top: 18%;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        opacity: 0.2;
+
+        transform:
+            translateY(0)
+            scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-22px)
+            scale(1.4);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+   ========================================================= */
+
+.intro-bottom-line {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 35px;
+
+    width: 220px;
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.45),
+            transparent
+        );
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   INTRO ANIMATIONS
+   ========================================================= */
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes introTextReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes welcomeReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.9);
+
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes subtitleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes tapPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(7px);
+    }
+}
+
+
+/* =========================================================
+   ROLE PAGE REVEAL
+   ========================================================= */
+
+@keyframes rolePageReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(1.04);
+
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .campus-frame {
+        width: 98vw;
+    }
+
+    .cinematic-logo {
+        width: 135px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .cinematic-logo {
+        width: 115px;
+
+        margin-bottom: 14px;
+    }
+
+    .welcome-text {
+        font-size: 9px;
+
+        letter-spacing: 5px;
+    }
+
+    .intro-text h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .intro-text p {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .tap-to-enter {
+        margin-top: 40px;
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .cinematic-spotlight {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .cinematic-logo {
+        width: 95px;
+    }
+
+    .intro-text h1 {
+        font-size: 38px;
+    }
+
+    .intro-line {
+        width: 130px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cinematic-intro,
+    .cinematic-spotlight,
+    .intro-text,
+    .cinematic-logo,
+    .intro-line,
+    .tap-to-enter,
+    .intro-particle,
+    .campus-frame {
+        animation: none !important;
+    }
+}
+/* =====================================================
+   MENTOR ROLE
+   ===================================================== */
+
+.mentor-role-overlay {
+    position: absolute;
+    z-index: 20;
+
+    width: 300px;
+    min-height: 390px;
+
+    top: 50%;
+    right: 30px;
+
+    transform: translateY(-50%);
+
+    padding: 30px 25px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(245, 240, 255, 0.97),
+        rgba(255, 255, 255, 0.94)
+    );
+
+    border: 2px solid rgba(124, 58, 237, 0.25);
+
+    box-shadow:
+        0 20px 50px rgba(76, 29, 149, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.mentor-role-overlay:hover {
+    transform: translateY(-50%) translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(76, 29, 149, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.mentor-role-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    color: white;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.mentor-role-overlay h2 {
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.mentor-role-line {
+    width: 48px;
+    height: 4px;
+
+    margin: 12px 0 16px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #a855f7
+    );
+}
+
+.mentor-role-overlay p {
+    margin: 0 0 24px;
+
+    color: #475569;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.mentor-role-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(124, 58, 237, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+.mentor-role-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(124, 58, 237, 0.35);
+}
+
+.mentor-role-button span {
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   MENTOR CLICK AREA
+   ===================================================== */
+
+.mentor-area {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1200px) {
+
+    .mentor-role-overlay {
+        width: 270px;
+        min-height: 350px;
+        right: 20px;
+        padding: 25px 20px;
+    }
+
+    .mentor-role-overlay h2 {
+        font-size: 24px;
+    }
+
+    .mentor-role-overlay p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .mentor-role-overlay {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        transform: none;
+
+        width: 90%;
+        max-width: 360px;
+
+        margin: 25px auto;
+    }
+
+    .mentor-role-overlay:hover {
+        transform: translateY(-5px);
+    }
+}
+/* =====================================================
+   FOUR ROLE CLICKABLE AREAS
+   CampusSphere 4-Role Layout
+   ===================================================== */
+
+.campus-frame {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.role-background {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+/* Clickable layer */
+
+.click-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Common button */
+
+.click-area {
+    position: absolute;
+
+    display: block;
+
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    border-radius: 25px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* =====================================================
+   STUDENT
+   ===================================================== */
+
+.student-area {
+    left: 4.8%;
+    top: 36.5%;
+    width: 22.5%;
+    height: 43.5%;
+}
+
+/* =====================================================
+   FACULTY
+   ===================================================== */
+
+.faculty-area {
+    left: 28.2%;
+    top: 36.5%;
+    width: 21.7%;
+    height: 43.5%;
+}
+
+/* =====================================================
+   MENTOR
+   ===================================================== */
+
+.mentor-area {
+    left: 50.5%;
+    top: 36.5%;
+    width: 22%;
+    height: 43.5%;
+}
+
+/* =====================================================
+   ADMIN
+   ===================================================== */
+
+.admin-area {
+    left: 73.2%;
+    top: 36.5%;
+    width: 22%;
+    height: 43.5%;
+}
+
+/* =====================================================
+   HOVER EFFECT
+   ===================================================== */
+
+.click-area:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        inset 0 0 0 2px rgba(255, 255, 255, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.click-area:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+   KEEP BUTTON CONTENT INVISIBLE
+   ===================================================== */
+
+.click-area span {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =====================================================
+   STUDENT REGISTER AREA
+   ===================================================== */
+
+.register-area {
+    left: 7%;
+    top: 79%;
+    width: 17%;
+    height: 6%;
+    z-index: 30;
+}
+
+.register-area:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1200px) {
+
+    .student-area {
+        left: 4%;
+        width: 22.8%;
+    }
+
+    .faculty-area {
+        left: 28%;
+        width: 22%;
+    }
+
+    .mentor-area {
+        left: 51%;
+        width: 21.8%;
+    }
+
+    .admin-area {
+        left: 74%;
+        width: 21.5%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .campus-frame {
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .role-background {
+        width: 100%;
+        min-height: 100vh;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .click-layer {
+        position: absolute;
+        inset: 0;
+    }
+
+    .student-area,
+    .faculty-area,
+    .mentor-area,
+    .admin-area {
+        height: 22%;
+    }
+}
+/* =========================================================
+   CAMPUSSPHERE FOUR ROLE BUTTON CLICK AREAS
+   ========================================================= */
+
+.campus-frame {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+}
+
+/* Background image */
+
+.role-background {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   CLICK LAYER
+   ========================================================= */
+
+.click-layer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 50;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   COMMON CLICK BUTTON
+   ========================================================= */
+
+.role-click {
+    position: absolute;
+
+    display: block;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    z-index: 60;
+
+    outline: none;
+
+    border-radius: 14px;
+
+    transition: background 0.2s ease;
+}
+
+/*
+   Invisible by default.
+
+   When you hover over the actual login button,
+   a very light effect appears so you know the
+   button is active.
+*/
+
+.role-click:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.role-click:active {
+    transform: scale(0.98);
+}
+
+.role-click span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   STUDENT LOGIN BUTTON
+   ========================================================= */
+
+.student-login-click {
+    left: 3.0%;
+    top: 80.0%;
+
+    width: 22.0%;
+    height: 7.0%;
+}
+
+
+/* =========================================================
+   STUDENT REGISTER
+   ========================================================= */
+
+.register-click {
+    left: 7.0%;
+    top: 88.0%;
+
+    width: 15.0%;
+    height: 4.0%;
+}
+
+
+/* =========================================================
+   FACULTY LOGIN BUTTON
+   ========================================================= */
+
+.faculty-login-click {
+    left: 27.3%;
+    top: 80.0%;
+
+    width: 22.0%;
+    height: 7.0%;
+}
+
+
+/* =========================================================
+   MENTOR LOGIN BUTTON
+   ========================================================= */
+
+.mentor-login-click {
+    left: 50.4%;
+    top: 80.0%;
+
+    width: 22.0%;
+    height: 7.0%;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN BUTTON
+   ========================================================= */
+
+.admin-login-click {
+    left: 73.8%;
+    top: 80.0%;
+
+    width: 22.0%;
+    height: 7.0%;
+}
+
+
+/* =========================================================
+   KEYBOARD ACCESS
+   ========================================================= */
+
+.role-click:focus-visible {
+    outline: 3px solid rgba(99, 102, 241, 0.8);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .student-login-click {
+        left: 3%;
+        top: 79%;
+        width: 22%;
+        height: 7%;
+    }
+
+    .register-click {
+        left: 7%;
+        top: 87%;
+        width: 15%;
+        height: 4%;
+    }
+
+    .faculty-login-click {
+        left: 27%;
+        top: 79%;
+        width: 22%;
+        height: 7%;
+    }
+
+    .mentor-login-click {
+        left: 50%;
+        top: 79%;
+        width: 22%;
+        height: 7%;
+    }
+
+    .admin-login-click {
+        left: 74%;
+        top: 79%;
+        width: 22%;
+        height: 7%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .campus-frame {
+        overflow-x: auto;
+    }
+
+    .role-background {
+        width: 100%;
+        min-width: 900px;
+        max-width: none;
+    }
+
+    .click-layer {
+        min-width: 900px;
+    }
+
+}

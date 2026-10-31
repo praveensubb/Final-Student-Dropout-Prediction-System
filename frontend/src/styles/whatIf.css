@@ -1,0 +1,419 @@
+/* =========================================================
+   WHAT-IF SIMULATOR
+   ========================================================= */
+
+.what-if-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    padding: 40px 20px;
+}
+
+.what-if-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.what-if-header {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.what-if-back {
+    border: none;
+    background: #0f172a;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.what-if-back:hover {
+    opacity: 0.9;
+}
+
+.what-if-label {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #ede9fe;
+    color: #6d28d9;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.what-if-header h1 {
+    margin: 10px 0;
+    font-size: 36px;
+    color: #0f172a;
+}
+
+.what-if-header p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.what-if-info {
+    padding: 20px 24px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e3a8a;
+}
+
+.what-if-info strong {
+    font-size: 17px;
+}
+
+.what-if-info p {
+    margin: 8px 0 0;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.what-if-card {
+    padding: 30px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.what-if-card h2 {
+    margin: 0 0 22px;
+    color: #0f172a;
+}
+
+.what-if-subtitle {
+    margin-top: 35px !important;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.what-if-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.what-if-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.what-if-field label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.what-if-field input,
+.what-if-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+.what-if-field input:focus,
+.what-if-field select:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.what-if-field small {
+    margin-top: 6px;
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   SIMULATE BUTTON
+   ========================================================= */
+
+.simulate-button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #7c3aed;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.simulate-button:hover {
+    background: #6d28d9;
+}
+
+.simulate-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.what-if-error {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.what-if-result {
+    margin-top: 30px;
+    padding: 35px;
+    border-radius: 20px;
+    background: white;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.result-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    color: #64748b;
+}
+
+.simulated-percentage {
+    margin: 10px 0;
+    font-size: 64px;
+    font-weight: 900;
+}
+
+.what-if-result h2 {
+    margin: 0 0 15px;
+}
+
+.what-if-result > p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RISK COLORS
+   ========================================================= */
+
+.what-if-result.risk-low {
+    border-color: #86efac;
+}
+
+.what-if-result.risk-low .simulated-percentage,
+.what-if-result.risk-low h2 {
+    color: #15803d;
+}
+
+.what-if-result.risk-medium {
+    border-color: #fcd34d;
+}
+
+.what-if-result.risk-medium .simulated-percentage,
+.what-if-result.risk-medium h2 {
+    color: #d97706;
+}
+
+.what-if-result.risk-high {
+    border-color: #fca5a5;
+}
+
+.what-if-result.risk-high .simulated-percentage,
+.what-if-result.risk-high h2 {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   MODEL DETAILS
+   ========================================================= */
+
+.simulation-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.simulation-details div {
+    padding: 20px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.simulation-details span {
+    display: block;
+    color: #64748b;
+    margin-bottom: 7px;
+}
+
+.simulation-details strong {
+    font-size: 25px;
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   FACTORS
+   ========================================================= */
+
+.simulation-factors {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 14px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    text-align: left;
+}
+
+.simulation-factors h3 {
+    margin-top: 0;
+    color: #9a3412;
+}
+
+.simulation-factors ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.simulation-factors li {
+    margin: 8px 0;
+    color: #431407;
+}
+
+
+/* =========================================================
+   SHAP
+   ========================================================= */
+
+.simulation-shap {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 14px;
+    background: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    text-align: left;
+}
+
+.simulation-shap h3 {
+    margin-top: 0;
+    color: #5b21b6;
+}
+
+.simulation-shap > p {
+    color: #6d28d9;
+    line-height: 1.6;
+}
+
+.simulation-shap-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #ddd6fe;
+}
+
+.simulation-shap-row:last-child {
+    border-bottom: none;
+}
+
+.simulation-shap-row > span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    font-weight: 900;
+}
+
+.simulation-shap-row strong {
+    flex: 1;
+    color: #312e81;
+}
+
+.simulation-shap-row small {
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .what-if-page {
+        padding: 25px 15px;
+    }
+
+    .what-if-header {
+        flex-direction: column;
+    }
+
+    .what-if-header h1 {
+        font-size: 30px;
+    }
+
+    .what-if-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simulation-details {
+        grid-template-columns: 1fr;
+    }
+
+    .simulated-percentage {
+        font-size: 50px;
+    }
+
+    .what-if-card,
+    .what-if-result {
+        padding: 22px;
+    }
+
+    .simulation-shap-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}

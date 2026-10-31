@@ -1,0 +1,83 @@
+.faculty-login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ecfdf5, #f8fafc);
+    padding: 20px;
+}
+
+.faculty-login-box {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-login-icon {
+    text-align: center;
+    font-size: 55px;
+}
+
+.faculty-login-box h1 {
+    text-align: center;
+    color: #166534;
+    margin-bottom: 8px;
+}
+
+.faculty-login-box p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.faculty-login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.faculty-login-box label {
+    margin-bottom: 7px;
+    color: #334155;
+    font-weight: 600;
+}
+
+.faculty-login-box input {
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.faculty-login-box input:focus {
+    outline: none;
+    border-color: #16a34a;
+}
+
+.faculty-login-box form button {
+    padding: 13px;
+    background: #16a34a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faculty-login-box form button:hover {
+    background: #15803d;
+}
+
+.back-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+}

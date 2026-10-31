@@ -1,0 +1,359 @@
+/* ===================================================== */
+/* STUDENT DASHBOARD */
+/* ===================================================== */
+
+.student-dashboard {
+    min-height: 100vh;
+    background: #f4f6fa;
+}
+
+
+/* ===================================================== */
+/* MAIN CONTENT */
+/* ===================================================== */
+
+.student-main {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    padding: 32px;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.student-header {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 28px 32px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+}
+
+.student-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #172033;
+}
+
+.student-header p {
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.student-role {
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ===================================================== */
+/* FEATURE GRID */
+/* ===================================================== */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(220px, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+
+    max-width: 1100px;
+}
+
+
+/* ===================================================== */
+/* FEATURE CARD */
+/* ===================================================== */
+
+.feature-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    min-height: 205px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ===================================================== */
+/* ICON */
+/* ===================================================== */
+
+.feature-icon {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #2563eb;
+
+    margin-bottom: 14px;
+}
+
+.feature-icon svg {
+    font-size: 32px;
+}
+
+
+/* ===================================================== */
+/* TEXT */
+/* ===================================================== */
+
+.feature-card h2 {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+
+    color: #172033;
+}
+
+.feature-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ===================================================== */
+/* BADGE */
+/* ===================================================== */
+
+.feature-badge {
+    display: inline-block;
+
+    margin-top: 16px;
+
+    padding: 5px 10px;
+
+    border-radius: 12px;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ===================================================== */
+/* RISK SUMMARY */
+/* ===================================================== */
+
+.risk-summary {
+    margin-top: 28px;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+}
+
+.risk-summary h2 {
+    margin: 0 0 8px;
+
+    color: #172033;
+}
+
+.risk-summary p {
+    margin: 0;
+
+    color: #64748b;
+}
+
+.risk-summary button {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.risk-summary button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ===================================================== */
+/* RESPONSIVE - TABLET */
+/* ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .student-main {
+        margin-left: 240px;
+
+        width: calc(100% - 240px);
+
+        padding: 25px;
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, minmax(200px, 1fr));
+    }
+
+}
+
+
+/* ===================================================== */
+/* RESPONSIVE - SMALL TABLET */
+/* ===================================================== */
+
+@media (max-width: 800px) {
+
+    .student-main {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .student-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .risk-summary {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ===================================================== */
+/* RESPONSIVE - MOBILE */
+/* ===================================================== */
+
+@media (max-width: 600px) {
+
+    .student-main {
+        padding: 15px;
+    }
+
+    .student-header {
+        padding: 20px;
+    }
+
+    .student-header h1 {
+        font-size: 24px;
+    }
+
+    .feature-card {
+        padding: 20px;
+
+        min-height: auto;
+    }
+
+    .risk-summary {
+        padding: 20px;
+    }
+
+}

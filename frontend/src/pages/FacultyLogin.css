@@ -1,0 +1,1086 @@
+/* =====================================================
+   CAMPUSSPHERE FACULTY LOGIN
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+.faculty-login-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 110px 25px 60px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(16, 185, 129, 0.13),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 92% 80%,
+            rgba(37, 99, 235, 0.10),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f0fdf9,
+            #f8fafc
+        );
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =====================================================
+   BACKGROUND CIRCLES
+   ===================================================== */
+
+.faculty-bg-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.faculty-circle-one {
+
+    width: 430px;
+
+    height: 430px;
+
+    top: -230px;
+
+    left: -180px;
+
+    background:
+        rgba(16, 185, 129, 0.07);
+}
+
+
+.faculty-circle-two {
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -260px;
+
+    bottom: -280px;
+
+    background:
+        rgba(37, 99, 235, 0.06);
+}
+
+
+/* =====================================================
+   TOP HEADER
+   ===================================================== */
+
+.faculty-top-header {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 45px;
+
+    right: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+
+.faculty-future-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    color: #52658f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.future-line {
+
+    width: 65px;
+
+    height: 3px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #08a5b5,
+            #16a34a
+        );
+}
+
+
+/* =====================================================
+   MAIN WRAPPER
+   ===================================================== */
+
+.faculty-login-wrapper {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border:
+        1px solid #dbe5ed;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.13);
+}
+
+
+/* =====================================================
+   LEFT PANEL
+   ===================================================== */
+
+.faculty-brand-panel {
+
+    position: relative;
+
+    padding: 45px 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 40%,
+            rgba(16, 185, 129, 0.18),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            #e8fff7,
+            #eefdf9 45%,
+            #eff6ff
+        );
+}
+
+
+.faculty-brand-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 150px;
+
+    right: -80px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(16, 185, 129, 0.10);
+
+    transform: rotate(-12deg);
+}
+
+
+/* =====================================================
+   PANEL LOGO
+   ===================================================== */
+
+.faculty-panel-logo {
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+
+.faculty-badge {
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border:
+        1px solid #b8f0dc;
+
+    color: #087f65;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 18px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.faculty-badge-icon {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #10b981;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   LEFT HEADING
+   ===================================================== */
+
+.faculty-brand-panel h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 18px;
+
+    color: #0d1b42;
+
+    font-size:
+        clamp(32px, 3.4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 850;
+}
+
+
+.faculty-brand-panel h1 span {
+
+    color: #129b78;
+}
+
+
+.faculty-brand-panel > p {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 550px;
+
+    margin: 0 0 28px;
+
+    color: #536987;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FEATURES
+   ===================================================== */
+
+.faculty-features {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.faculty-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.feature-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 7px 15px rgba(15, 23, 42, 0.10);
+}
+
+
+.feature-icon.green {
+
+    background:
+        linear-gradient(
+            135deg,
+            #20c997,
+            #0f9f79
+        );
+}
+
+
+.feature-icon.blue {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1683ff,
+            #2563eb
+        );
+}
+
+
+.feature-icon.purple {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+}
+
+
+.faculty-feature strong,
+.faculty-feature small {
+
+    display: block;
+}
+
+
+.faculty-feature strong {
+
+    color: #0f214b;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.faculty-feature small {
+
+    color: #627694;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   LEFT FOOTER
+   ===================================================== */
+
+.faculty-brand-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 18px;
+
+    border-top:
+        2px solid rgba(16, 163, 127, 0.5);
+
+    max-width: 430px;
+
+    color: #58708f;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   LOGIN CARD
+   ===================================================== */
+
+.faculty-login-card {
+
+    padding: 38px 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: white;
+}
+
+
+/* =====================================================
+   CARD LOGO
+   ===================================================== */
+
+.faculty-card-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   LOGIN HEADER
+   ===================================================== */
+
+.faculty-login-header {
+
+    text-align: center;
+
+    margin-bottom: 27px;
+}
+
+
+.faculty-welcome {
+
+    color: #129b78;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+.faculty-login-header h2 {
+
+    margin: 0 0 8px;
+
+    color: #0d1b42;
+
+    font-size: 31px;
+
+    font-weight: 850;
+
+    letter-spacing: -0.8px;
+}
+
+
+.faculty-login-header p {
+
+    margin: 0;
+
+    color: #6b7c95;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.faculty-login-card form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.faculty-input-group {
+
+    margin-bottom: 17px;
+}
+
+
+.faculty-input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #253755;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUT
+   ===================================================== */
+
+.faculty-input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.faculty-input-icon {
+
+    position: absolute;
+
+    left: 14px;
+
+    color: #8091a9;
+
+    font-size: 15px;
+
+    z-index: 2;
+}
+
+
+.faculty-input-wrapper input {
+
+    width: 100%;
+
+    height: 49px;
+
+    padding:
+        0 45px 0 42px;
+
+    border:
+        1px solid #d5e0ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #f8fbfd;
+
+    color: #172b4d;
+
+    font-size: 13px;
+
+    transition:
+        0.2s ease;
+}
+
+
+.faculty-input-wrapper input::placeholder {
+
+    color: #9aaabd;
+}
+
+
+.faculty-input-wrapper input:focus {
+
+    background: white;
+
+    border-color: #16a37c;
+
+    box-shadow:
+        0 0 0 4px rgba(
+            22,
+            163,
+            124,
+            0.10
+        );
+}
+
+
+/* =====================================================
+   PASSWORD BUTTON
+   ===================================================== */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 9px;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+.password-toggle:hover {
+
+    background: #eef5f4;
+}
+
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.faculty-login-error {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 15px;
+
+    border-radius: 9px;
+
+    background: #fef2f2;
+
+    border:
+        1px solid #fecaca;
+
+    color: #dc2626;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+   ===================================================== */
+
+.faculty-login-submit {
+
+    width: 100%;
+
+    height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #20c997,
+            #079b74
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 22px
+        rgba(
+            8,
+            155,
+            116,
+            0.22
+        );
+
+    transition:
+        0.2s ease;
+}
+
+
+.faculty-login-submit:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 28px
+        rgba(
+            8,
+            155,
+            116,
+            0.30
+        );
+}
+
+
+.faculty-login-submit:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+.login-arrow {
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   SPINNER
+   ===================================================== */
+
+.login-spinner {
+
+    width: 17px;
+
+    height: 17px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.4);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+        facultySpin 0.7s linear infinite;
+}
+
+
+@keyframes facultySpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   BACK HOME
+   ===================================================== */
+
+.faculty-back-button {
+
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border:
+        1px solid #d5e0ea;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #16816b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.faculty-back-button:hover {
+
+    background: #f1fbf8;
+
+    border-color: #9ee5ce;
+}
+
+
+/* =====================================================
+   SECURITY
+   ===================================================== */
+
+.faculty-secure {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 17px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   BOTTOM TAGLINE
+   ===================================================== */
+
+.faculty-page-tagline {
+
+    position: absolute;
+
+    bottom: 16px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #8292aa;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .faculty-login-page {
+
+        padding:
+            100px 20px 50px;
+    }
+
+
+    .faculty-login-wrapper {
+
+        max-width: 650px;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .faculty-brand-panel {
+
+        display: none;
+    }
+
+
+    .faculty-login-card {
+
+        padding:
+            45px 50px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .faculty-login-page {
+
+        padding:
+            90px 15px 45px;
+    }
+
+
+    .faculty-top-header {
+
+        top: 15px;
+
+        left: 20px;
+        right: 20px;
+    }
+
+
+    .faculty-future-text {
+
+        display: none;
+    }
+
+
+    .faculty-login-wrapper {
+
+        min-height: auto;
+
+        border-radius: 22px;
+    }
+
+
+    .faculty-login-card {
+
+        padding:
+            35px 25px;
+    }
+
+
+    .faculty-card-logo {
+
+        margin-bottom: 15px;
+    }
+
+
+    .faculty-login-header h2 {
+
+        font-size: 27px;
+    }
+
+
+    .faculty-page-tagline {
+
+        display: none;
+    }
+
+}
